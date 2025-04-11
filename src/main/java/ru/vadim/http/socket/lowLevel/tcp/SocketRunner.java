@@ -1,4 +1,4 @@
-package ru.vadim.http.socket;
+package ru.vadim.http.socket.lowLevel.tcp;
 
 import java.io.*;
 import java.net.Inet4Address;

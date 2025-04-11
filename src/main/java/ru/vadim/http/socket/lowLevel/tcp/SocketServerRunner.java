@@ -1,4 +1,4 @@
-package ru.vadim.http.socket;
+package ru.vadim.http.socket.lowLevel.tcp;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

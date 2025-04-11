@@ -1,4 +1,4 @@
-package ru.vadim.http.socket;
+package ru.vadim.http.socket.lowLevel.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
