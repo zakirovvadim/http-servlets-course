@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Path;
+import java.util.concurrent.CompletableFuture;
 
 import static java.net.http.HttpRequest.BodyPublishers.ofFile;
 
@@ -19,8 +20,9 @@ public class HttpClientRunner {
                 .POST(ofFile(Path.of( "resources/first.json")))
                 .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.headers());
-        System.out.println(response.body());
+        CompletableFuture<HttpResponse<String>> response = client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+        CompletableFuture<HttpResponse<String>> response2 = client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+        CompletableFuture<HttpResponse<String>> response3 = client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response3.join().body());
     }
 }
